@@ -1,26 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
-namespace VRTK {
-    public class MenuOpener : MonoBehaviour {
+using VRTK;
 
-        public GameObject menu;
+public class MenuOpener : MonoBehaviour {
 
-        // Use this for initialization
-        void Start() {
+    public GameObject menu;
+
+    // Use this for initialization
+    void Start() {
+        menu.SetActive(false);
+        GetComponent<VRTK_ControllerEvents>().ApplicationMenuPressed += new ControllerInteractionEventHandler(OpenCloseMenu);
+    }
+
+    // Update is called once per frame
+    void Update() {
+    }
+
+    private void OpenCloseMenu(object sender, ControllerInteractionEventArgs e) {
+        if (menu.activeSelf) {
             menu.SetActive(false);
-            GetComponent<VRTK_ControllerEvents>().ApplicationMenuPressed += new ControllerInteractionEventHandler(OpenCloseMenu);
-        }
-
-        // Update is called once per frame
-        void Update() {
-        }
-
-        private void OpenCloseMenu(object sender, ControllerInteractionEventArgs e) {
-            if (menu.activeSelf) {
-                menu.SetActive(false);
-            } else {
-                menu.SetActive(true);
-            }
+        } else {
+            menu.SetActive(true);
         }
     }
 }
