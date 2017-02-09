@@ -81,10 +81,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\MyAssets\Scripts\MenuController.cs" />
-    <Compile Include="Assets\MyAssets\Scripts\MenuOpener.cs" />
-    <Compile Include="Assets\MyAssets\Scripts\PressButton.cs" />
-    <Compile Include="Assets\MyAssets\Scripts\ScrollbarControll.cs" />
+    <Compile Include="Assets\Scripts\LightCube.cs" />
+    <Compile Include="Assets\Scripts\MenuController.cs" />
+    <Compile Include="Assets\Scripts\MenuOpener.cs" />
+    <Compile Include="Assets\Scripts\PressButton.cs" />
+    <Compile Include="Assets\Scripts\ScrollbarControll.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_Teleporter.cs" />

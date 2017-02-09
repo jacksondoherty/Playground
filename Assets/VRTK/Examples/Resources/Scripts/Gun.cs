@@ -26,6 +26,8 @@
             GameObject bulletClone = Instantiate(bullet, bullet.transform.position, bullet.transform.rotation) as GameObject;
             bulletClone.SetActive(true);
             Rigidbody rb = bulletClone.GetComponent<Rigidbody>();
+            // jackson edit
+            rb.useGravity = GetComponent<Rigidbody>().useGravity;
             rb.AddForce(-bullet.transform.forward * bulletSpeed);
             Destroy(bulletClone, bulletLife);
         }

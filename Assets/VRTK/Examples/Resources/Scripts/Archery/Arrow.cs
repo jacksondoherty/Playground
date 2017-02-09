@@ -29,7 +29,8 @@
 
         public void Fired()
         {
-            DestroyArrow(maxArrowLife);
+            // jackson edit
+            //DestroyArrow(maxArrowLife);
         }
 
         public void ResetArrow()
