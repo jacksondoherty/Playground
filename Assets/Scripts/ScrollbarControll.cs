@@ -6,10 +6,10 @@ using VRTK;
 
 public class ScrollbarControll : MonoBehaviour {
     public GameObject handle;
+    public bool isScrolling = false;
 
     private float totalScrollHeight;
     private Scrollbar scrollbarScript;
-    private bool isScrolling = false;
     private GameObject wandHead;
     private float startPosition;
     private float startScrollValue = 1;
