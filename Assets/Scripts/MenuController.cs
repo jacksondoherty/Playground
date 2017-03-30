@@ -54,6 +54,8 @@ public class MenuController : MonoBehaviour {
     }
 
     public void ClearItemsListener() {
+        if (scrollbar.isScrolling) return;
+        
         GameObject[] items = GameObject.FindGameObjectsWithTag("item");
         foreach (GameObject item in items) {
             Destroy(item);
