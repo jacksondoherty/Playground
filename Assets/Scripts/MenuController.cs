@@ -15,21 +15,12 @@ public class MenuController : MonoBehaviour {
     public int velocity;
 
     private bool gravityON = true;
-    private ScrollbarControll scrollbar;
-
-    void Start() {
-        scrollbar = GetComponentInChildren<ScrollbarControll>();
-    }
 
     public void GunButtonListener() {
-        if (scrollbar.isScrolling) return;
-
         SpawnItem(gunPrefab, itemSpawnLocation1);
     }
 
     public void BowAndArrowButtonListener() {
-        if (scrollbar.isScrolling) return;
-
         SpawnItem(bowPrefab, itemSpawnLocation3);
         float offset = 0.05f;
         int num = 5;
@@ -41,21 +32,15 @@ public class MenuController : MonoBehaviour {
     }
 
     public void LightBoxButtonListener() {
-        if (scrollbar.isScrolling) return;
-
         SpawnItem(lightCubePrefab, itemSpawnLocation1);
     }
 
     public void GravityOnOffListener() {
-        if (scrollbar.isScrolling) return;
-
         gravityON = !gravityON;
         UpdateGravity();
     }
 
-    public void ClearItemsListener() {
-        if (scrollbar.isScrolling) return;
-        
+    public void ClearItemsListener() {        
         GameObject[] items = GameObject.FindGameObjectsWithTag("item");
         foreach (GameObject item in items) {
             Destroy(item);
@@ -64,6 +49,7 @@ public class MenuController : MonoBehaviour {
 
     void SpawnItem(GameObject itemPrefab, Transform spawnLocation) {
         GameObject item = Instantiate(itemPrefab, spawnLocation.position, spawnLocation.rotation);
+        // TODO: just update gravity on this single item
         UpdateGravity();
     }
 
